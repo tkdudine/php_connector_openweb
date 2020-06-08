@@ -4,8 +4,8 @@ function main(array $args) : array {
     require 'config.php';
 
     if (! array_key_exists("dbname", $args) || ! array_key_exists("dbuser", $args) || ! array_key_exists("dbpass", $args)) {
-        $result = $emptyForm;
-        $json_result = json_decode($result);
+        $json_result = json_decode($emptyForm);
+        print_r($json_result);
         return array("body" => $json_result);
     }
 
@@ -37,7 +37,9 @@ function main(array $args) : array {
         
     } catch (PDOException $e) {
             print($e->getMessage() . "\n");
-            return array("body" => $e->getMessage());
+            $result['data'] = $e->getMessage();
+            $json_result = json_encode($result);
+            return array("body" => $json_result);
     }
       
     //Fetch all rows in the result set
