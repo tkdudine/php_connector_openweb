@@ -5,36 +5,36 @@
         {
             "type": "message",
             "name": "note",
-            "description": "Connect to postgres db to import messages"
+            "description": "Connect to ws to import messages"
         },
         {
-            "name": "dbhost",
-            "description": "DbHost",
-            "type": "string",
-            "required": false
-        },
-        {
-            "name": "dbport",
-            "description": "DbPort",
-            "type": "string",
-            "required": false
-        },
-        {
-            "name": "dbname",
-            "description": "DbName",
+            "name": "url",
+            "description": "url",
             "type": "string",
             "required": true
         },
         {
-            "name": "dbuser",
-            "description": "DbUser",
+            "name": "user",
+            "description": "user",
             "type": "string",
             "required": true
         },
         {
-            "name": "dbpass",
-            "description": "DbPass",
-            "type": "password",
+            "name": "password",
+            "description": "password",
+            "type": "string",
+            "required": true
+        },
+        {
+            "name": "cf",
+            "description": "Codice fiscale",
+            "type": "string",
+            "required": false
+        },
+        {
+            "name": "stato",
+            "description": "Stato",
+            "type": "string",
             "required": true
         }
   ]}
